@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — All Teed Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* ── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Design tokens ────────────────────────────────────── */
+    :root {
+      --purple:       #7B2D8E;
+      --purple-deep:  #5C1D6E;
+      --purple-soft:  #9B4DB8;
+      --purple-pale:  #F3EAF6;
+      --text-dark:    #1E1E2E;
+      --text-body:    #4A4A5E;
+      --text-muted:   #8888A0;
+      --white:        #FFFFFF;
+      --off-white:    #FAFAFE;
+      --grey:         #E8E8EE;
+      --grey-light:   #F4F4F8;
+      --radius-card:  12px;
+      --radius-sm:    8px;
+      --shadow:       0 4px 24px rgba(123, 45, 142, 0.12);
+      --transition:   300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ── Base ─────────────────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-body);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ───────────────────────────────────────────── */
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Header ───────────────────────────────────────────── */
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--grey);
+    }
+    .header__badge {
+      display: inline-block;
+      background: var(--purple-pale);
+      color: var(--purple);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .header p {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    /* ── Sections ─────────────────────────────────────────── */
+    section {
+      margin-bottom: 40px;
+    }
+    section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      padding-left: 16px;
+      border-left: 3px solid var(--purple);
+    }
+    section h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--text-dark);
+      margin: 20px 0 8px;
+    }
+    section p {
+      margin-bottom: 12px;
+    }
+
+    /* ── Lists ────────────────────────────────────────────── */
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    li::marker {
+      color: var(--purple-soft);
+    }
+
+    /* ── Highlight card ───────────────────────────────────── */
+    .highlight {
+      background: var(--purple-pale);
+      border-radius: var(--radius-card);
+      padding: 20px 24px;
+      margin: 24px 0;
+      border: 1px solid rgba(123, 45, 142, 0.08);
+    }
+    .highlight p {
+      margin-bottom: 0;
+      color: var(--purple-deep);
+      font-weight: 500;
+    }
+
+    /* ── FAQ ──────────────────────────────────────────────── */
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    /* ── Strong / emphasis ────────────────────────────────── */
+    strong {
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    /* ── Links ────────────────────────────────────────────── */
+    a {
+      color: var(--purple);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition);
+    }
+    a:hover, a:focus-visible {
+      color: var(--purple-deep);
+      border-bottom-color: var(--purple-deep);
+    }
+
+    /* ── Contact card ─────────────────────────────────────── */
+    .contact-card {
+      background: var(--grey-light);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      text-align: center;
+    }
+    .contact-card a {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    /* ── Footer ───────────────────────────────────────────── */
+    .footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--grey);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .footer span {
+      color: var(--purple);
+    }
+    .footer a {
+      color: var(--text-muted);
+    }
+
+    /* ── Responsive ───────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .wrapper { padding: 32px 16px 56px; }
+      .header h1 { font-size: 28px; }
+      section h2 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- ── Header ─────────────────────────────────────── -->
+    <header class="header">
+      <div class="header__badge">All Teed Up</div>
+      <h1>Support</h1>
+      <p>If you made the booking, share the screenshot. It lands in every player's calendar.</p>
+    </header>
+
+    <!-- ── What the app does ──────────────────────────── -->
+    <section>
+      <h2>What All Teed Up Does</h2>
+      <p>
+        If you are the booking creator, share a screenshot of your golf
+        booking with All Teed Up and it goes into every player's calendar as
+        an invite.
+      </p>
+      <p>
+        Everyone else on the booking does nothing. They get a calendar invite
+        and accept or decline it, and their answer comes back to the creator.
+      </p>
+      <p>
+        Three things that gets you:
+      </p>
+      <ul>
+        <li><strong>Eliminate or at least reduce no-show fines.</strong> The round is in
+          everyone's diary, with reminders — not just the booker's.</li>
+        <li><strong>Remember who you are playing with.</strong> The invite
+          names everyone playing.</li>
+        <li><strong>No double booking.</strong> The app checks your calendar
+          before it saves and tells you if something else is already at that
+          tee time.</li>
+      </ul>
+      <p>
+        It is for everyone on the booking. Whoever made it adds it,
+        everyone else accepts the invite. Any round booked with All Teed Up
+        that you are on appears in the app, with your own answer against each.
+      </p>
+      <p>
+        When you add a booking, the app asks what it is first, so it reads the
+        screenshot the right way:
+      </p>
+      <ul>
+        <li><strong>A booking I just made</strong> — the other players get a
+          calendar invite.</li>
+        <li><strong>A booking just for me</strong> — recorded in your
+          calendar, nobody invited.</li>
+        <li><strong>A tournament I'm playing in</strong> — the club draws the
+          field, so no invites are sent.</li>
+      </ul>
+      <p>
+        Everything runs on your phone. No accounts, no sign-up, and nothing
+        leaves the device except the calendar invite itself.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Someone declined — what happens?</h3>
+        <p>
+          You are told, without having to check. The app then suggests who to
+          ask instead, taken from the people you play with most across the
+          rounds you have organised. It cannot tell you who is free — nothing
+          on your phone knows that — so check with them first.
+        </p>
+        <p>
+          Swap your replacement in and the calendar does the rest: the player
+          who dropped out comes off the invite, the new one gets theirs, and
+          everyone still playing gets an updated invite saying what changed,
+          so nobody is left wondering why it reappeared.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>My booking has a slot I haven't filled — can I still add it?</h3>
+        <p>
+          Yes. If the booking is for four and only three are named, the empty
+          seat shows as <strong>TBC</strong> on the round and as an open slot
+          on the calendar invite. Add the fourth player when you find them and
+          they get an invitation then.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I let friends and family know I'm playing?</h3>
+        <p>
+          Yes, if you made the booking. Add friends or family once under
+          <strong>Friends &amp; Family</strong> in Settings, then tick whoever
+          you want when you add a booking. They get the round for information,
+          so somebody at home knows which course you are at and when you are
+          due back.
+        </p>
+        <p>
+          They are never counted as players. They cannot be mistaken for one
+          when the round is read back, and they are not asked to accept
+          anything. You can have them ticked by default on every new booking
+          if you would rather not think about it each time.
+        </p>
+        <p>
+          It is only available to the person who made the booking. On a round
+          somebody else added you to, there is nothing to tick — you cannot
+          add your friends and family to their round.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What else does it do that I would otherwise do by hand?</h3>
+        <ul>
+          <li><strong>Finds the email addresses.</strong> Player names on the
+            booking are matched against your own contacts, on the phone, so
+            the invite reaches people rather than sitting there unaddressed.</li>
+          <li><strong>Puts the course in as the location</strong>, so a maps
+            app can navigate to it, and carries the booking reference with the
+            round.</li>
+          <li><strong>Reminders</strong> 12 hours and 1 hour before, on by
+            default and adjustable in Settings.</li>
+          <li><strong>Tells you when somebody answers</strong> — declines
+            arrive as a notification and sit in Alerts.</li>
+          <li><strong>Keeps played rounds</strong> under Past rounds rather
+            than deleting them.</li>
+          <li><strong>Takes a shared screenshot</strong> straight from Photos
+            or WhatsApp, and asks what it is before it reads it.</li>
+          <li><strong>Falls back to manual entry</strong> if a screenshot
+            cannot be read, instead of leaving you stuck.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does this actually stop no-show fines?</h3>
+        <p>
+          It removes the commonest reason people miss a tee time: it was only
+          ever in the organiser's diary. With the round in everyone's calendar,
+          named, and with reminders 12 hours and 1 hour before, far fewer
+          people forget.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is it only for multiplayer bookings?</h3>
+        <p>
+          That is what it was designed for. The problem All Teed Up solves is
+          managing multi-player bookings: Viya and most booking systems
+          already send the booker a calendar invite, so the gap is everyone
+          else on the booking.
+        </p>
+        <p>
+          Managing single-player bookings and tournament entries was added by
+          request during testing. Both work, and both are on the home screen —
+          they are simply not the reason the app exists.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do the other players need the app?</h3>
+        <p>
+          No. Only the booking creator adds the booking. Everyone else gets an
+          ordinary calendar invite and accepts or declines it, and their
+          answer comes back to the creator.
+        </p>
+        <p>
+          If they do have it, every round anyone books them into with All Teed
+          Up appears automatically — nothing to forward or type in — in one
+          list, with their own answer against each and a badge on any they
+          have not answered yet.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why does the app need Camera / Photos access?</h3>
+        <p>
+          To read the screenshot of your booking confirmation. Text
+          recognition runs entirely on your phone — the image is never sent
+          anywhere.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why does the app need Contacts access?</h3>
+        <p>
+          To match player names on your booking to their email addresses,
+          so calendar invites can be addressed correctly. This lookup
+          happens entirely on-device.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why does the app need Calendar access?</h3>
+        <p>
+          To create the round as an event in your device's own calendar and
+          to read replies back. It works with any account your phone
+          publishes — iCloud, Google, Outlook, Exchange or Yahoo — on both
+          iPhone and Android. Syncing is done by your phone, not by us.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why does the app need Notification access?</h3>
+        <p>
+          To tell you when a player declines a round you have organised.
+          Notifications are generated on your device from your own calendar —
+          nothing is sent from a server, and no push identifier is created.
+        </p>
+
+        <h3>It didn't pick up the right details — what do I do?</h3>
+        <p>
+          Booking screenshots come in a lot of formats. If a course, time or
+          player is missed or wrong, correct it on the review screen before
+          the round is saved — nothing is created until you confirm. If the
+          App thinks you picked the wrong option — a tournament read as an
+          ordinary booking, or the reverse — it says so on that screen and
+          you can go back and choose again. And if it could not read the
+          screenshot at all, it takes you to manual entry rather than saving
+          a half-read round.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>My calendar isn't in the list — where is it?</h3>
+        <p>
+          Almost always because the calendar has not been published to your
+          phone, so no app can see it — not All Teed Up, not your phone's own
+          calendar app. Outlook is the usual case: it keeps its calendar
+          inside its own app until you switch sync on.
+        </p>
+        <p>
+          You do not need to know how. In the calendar list, tap
+          <strong>Google</strong>, <strong>Outlook</strong>,
+          <strong>Work / Exchange</strong> or <strong>Yahoo</strong> and the
+          App opens the right screen for you. If your phone refuses, the
+          steps are shown instead:
+        </p>
+        <ul>
+          <li><strong>Android</strong> — in Outlook, tap your profile picture,
+            then the gear icon, then your account under Mail Accounts, and
+            turn on <em>Sync calendars</em>.</li>
+          <li><strong>iPhone</strong> — Outlook on iOS keeps its calendar to
+            itself. Add the account to iOS Calendar instead:
+            Settings › Apps › Calendar › Calendar Accounts › Add Account ›
+            Outlook.com (or Exchange for a work account), and turn Calendars
+            on.</li>
+        </ul>
+        <p>
+          Then come back and tap <em>Refresh list</em>. If it still is not
+          there, tap <em>Still not showing?</em> — that shows exactly what
+          your phone reported, and you can copy it into an email to us.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Which calendar should I choose?</h3>
+        <p>
+          One that belongs to a real account — Google, Outlook, Exchange,
+          iCloud or Yahoo. The app picks one for you and prefers an account
+          that can actually deliver invitations. A calendar that lives only
+          on the phone (often called "On My iPhone", "Phone", "Local", or
+          "Birthdays") cannot send an invite or receive a reply. On iPhone it
+          is worse than that: iOS refuses to save a booking for other players
+          to one at all, rather than saving it without the invitation. The app
+          will not choose such a calendar unless it is the only one you have,
+          and it tells you plainly if you pick one.
+        </p>
+        <p>
+          If you would rather not take our word for which calendars work,
+          don't. In <strong>Settings</strong>, under your calendar, tap
+          <strong>Check this calendar can invite people</strong>. It puts a
+          temporary entry in that calendar with your own address on it, reads
+          it back to see whether the invitation survived, removes it again,
+          and tells you what happened. Nobody else is ever put on that
+          entry.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>I added a tournament and it shows no other players — is that
+          wrong?</h3>
+        <p>
+          No, that is correct. A club competition is an entry for you alone:
+          the club draws the field and publishes it closer to the day, so
+          there is nobody to invite yet. Your entry shows the venue, the
+          format and its status, and you are listed as the player. When the
+          draw comes out, share it with the app and add your playing partners then.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I see whether I've accepted a round someone added me to?</h3>
+        <p>
+          Tap <strong>Bookings I've been added to</strong> on the home screen.
+          Each one shows who added you and whether you have accepted, declined
+          or not yet answered — and the number beside it is how many are still
+          waiting on you. To answer, open the invitation in your calendar or
+          email; the app reads your reply back from the calendar.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>The booking changed — how do I update it?</h3>
+        <p>
+          Open the round and tap <strong>Amend Booking</strong>, then share the
+          new confirmation with the app. The app shows you exactly what changed — who was
+          added and who was removed — before anything is saved. Players who
+          were already on the round get an updated invitation that says what
+          changed, rather than a silent duplicate.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Will I end up with the same round twice?</h3>
+        <p>
+          The app checks before it saves. If a round at that course and time
+          already exists it offers to update it instead of adding a second
+          one, and if something unrelated is already in your calendar at that
+          time it tells you and lets you decide. Nothing is created or
+          replaced without you confirming.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>I shared a screenshot into the app — will it know what it is?</h3>
+        <p>
+          It asks. Sharing a screenshot from Photos, WhatsApp or anywhere else
+          opens the app and asks what you have got, exactly as the home screen
+          does, before it reads anything. That matters most for tournaments:
+          read as an ordinary booking, a competition entry would list the
+          form's own labels as players.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What does All Teed Up cost?</h3>
+        <p>
+          AED 99 a year, billed through the app Store or Google Play. Manage or
+          cancel it in your store account settings at any time — cancelling
+          stops future renewals and you keep access until the current period
+          ends. If the subscription lapses you can still see rounds you have
+          already organised; adding new ones needs an active subscription.
+        </p>
+
+        <h3>How do I remove my data?</h3>
+        <p>
+          Uninstalling the app deletes everything stored on your device.
+          Calendar events already created remain in your device calendar
+          unless you delete them separately, since they're managed by
+          your calendar provider, not the app.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where's the Privacy Policy?</h3>
+        <p>
+          <a href="privacy.html">Read the full Privacy Policy here</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Contact ─────────────────────────────────────── -->
+    <section>
+      <h2>Still Need Help?</h2>
+      <div class="contact-card">
+        <p style="margin-bottom: 12px;">Get in touch and we'll help you out.</p>
+        <a href="mailto:allteedup.support@gmail.com">allteedup.support@gmail.com</a>
+      </div>
+    </section>
+
+    <!-- ── Footer ─────────────────────────────────────── -->
+    <footer class="footer">
+      <p>
+        &copy; 2026 All Teed Up. All rights reserved.
+        &middot; <a href="privacy.html">Privacy Policy</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
