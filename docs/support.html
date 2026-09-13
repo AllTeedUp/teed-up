@@ -59,6 +59,12 @@
       padding-bottom: 32px;
       border-bottom: 1px solid var(--grey);
     }
+    /* Spinning golf ball — the app's brand mark, drawn by golf-ball.js */
+    .header__logo {
+      display: block;
+      margin: 0 auto 12px;
+    }
+
     .header__badge {
       display: inline-block;
       background: var(--purple-pale);
@@ -202,6 +208,8 @@
 
     <!-- ── Header ─────────────────────────────────────── -->
     <header class="header">
+      <canvas class="header__logo" data-atu-ball="112" width="130" height="161"
+              style="width:130px;height:161px" aria-hidden="true"></canvas>
       <div class="header__badge">All Teed Up</div>
       <h1>Support</h1>
       <p>If you made the booking, share the screenshot. It lands in every player's calendar.</p>
@@ -570,5 +578,6 @@
       </p>
     </footer>
   </div>
+  <script src="golf-ball.js" defer></script>
 </body>
 </html>
