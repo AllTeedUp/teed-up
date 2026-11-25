@@ -213,7 +213,7 @@
       <div class="header__badge">All Teed Up</div>
       <h1>Support</h1>
       <p>If you made the booking, share the screenshot. It lands in every player's calendar.</p>
-      <p>Last updated: 20 October 2026 &middot; for version 71</p>
+      <p>Last updated: 19 November 2026 &middot; for version 75</p>
     </header>
 
     <!-- ── What the app does ──────────────────────────── -->
@@ -252,17 +252,24 @@
         that you are on appears in the app, with your own answer against each.
       </p>
       <p>
-        Tap the purple button at the bottom of the app and say what you are
-        adding, so it reads the screenshot the right way:
+        Tap the purple button at the bottom of the app and choose the
+        screenshot of your booking. The app reads it and tells you what it
+        found, so you confirm rather than classify:
       </p>
       <ul>
-        <li><strong>A booking I just made</strong> — the other players get a
+        <li><strong>A multiplayer booking</strong> — the other players get a
           calendar invite.</li>
-        <li><strong>A booking just for me</strong> — recorded in your
+        <li><strong>A booking just for you</strong> — recorded in your
           calendar, nobody invited.</li>
-        <li><strong>A tournament I'm playing in</strong> — the club draws the
-          field, so no invites are sent.</li>
+        <li><strong>A tournament booking</strong> — the club draws the field,
+          so no invites are sent.</li>
       </ul>
+      <p>
+        If it reads it wrong, tap <strong>Not right?</strong> on that screen
+        and pick the correct one. You stay where you are and nothing is read
+        again. When the screenshot does not say clearly, it shows you the
+        three choices instead of guessing.
+      </p>
       <p>
         Everything runs on your phone. No accounts, no sign-up, and nothing
         leaves the device except the calendar invite itself.
@@ -357,7 +364,7 @@
           <li><strong>Keeps played rounds</strong> under Past rounds rather
             than deleting them.</li>
           <li><strong>Takes a shared screenshot</strong> straight from Photos
-            or WhatsApp, and asks what it is before it reads it.</li>
+            or WhatsApp, reads it, and asks you to confirm what it found.</li>
           <li><strong>Falls back to manual entry</strong> if a screenshot
             cannot be read, instead of leaving you stuck.</li>
         </ul>
@@ -551,7 +558,8 @@
       <div class="faq-item">
         <h3>How do I see whether I've accepted a round someone added me to?</h3>
         <p>
-          Tap the purple button, then <strong>Bookings I've been added to</strong>.
+          Open <strong>Bookings</strong>. Invitations sent to you are at the
+          top of that page, with the number still waiting on you beside them.
           Each one shows who added you and whether you have accepted, declined
           or not yet answered — and the number beside it is how many are still
           waiting on you. To answer, open the invitation in your calendar or
@@ -642,13 +650,88 @@
       </div>
 
       <div class="faq-item">
+        <h3>The app got someone's email address wrong. How do I remove it?</h3>
+        <p>
+          Tap the address, then <strong>Remove this address</strong>. The
+          player stays on the booking — they are still playing, they just
+          will not be invited.
+        </p>
+        <p>
+          If an invitation had already gone to that address,
+          <strong>removing it cancels that invitation</strong>. That matters:
+          a wrong address belongs to somebody real, and they have been sent a
+          calendar event showing your course, your tee time and the other
+          players. Removing the address withdraws it from their calendar.
+        </p>
+        <p>
+          You can also leave an address blank when you simply do not know it.
+          Everyone else on the booking is still invited; the person with no
+          address is recorded on the round and not invited.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Setup will not let me past the calendar step</h3>
+        <p>
+          That is deliberate, from version 75. All Teed Up puts your round in
+          your calendar and invites the other players from there, so without
+          calendar access it cannot do anything at all. Finishing setup
+          without it used to leave you with an app that saved bookings
+          nowhere.
+        </p>
+        <p>
+          <strong>If you turned calendar access down before</strong>, the app
+          will ask again and will not continue until it is granted. If your
+          phone has stopped showing the request, the app gives you a button
+          that opens the right settings screen.
+        </p>
+        <p>
+          <strong>On iPhone, choose Full Access, not Add Only.</strong>
+          iPhone offers both. Add Only lets the app write a round into your
+          calendar but never read it back, so it could not tell you who had
+          accepted or let you know when somebody dropped out. If you have
+          already chosen Add Only, open Settings &rsaquo; Privacy &amp;
+          Security &rsaquo; Calendars &rsaquo; All Teed Up and switch it to
+          Full Access.
+        </p>
+        <p>
+          <strong>On Android</strong>, open Settings &rsaquo; Apps &rsaquo;
+          All Teed Up &rsaquo; Permissions &rsaquo; Calendar and choose
+          Allow.
+        </p>
+        <p>
+          You then pick which calendar your rounds go in. If the one you want
+          is not listed, it is almost always because the account is not
+          syncing to your phone's calendar yet — tap
+          <strong>Calendar not listed? Add it</strong> and the app gives you
+          the steps for your phone.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do I need to send the invite separately after adding a booking?</h3>
+        <p>
+          No. Adding the booking and sending the invitations are one step.
+          When you confirm the details, the app writes the round to your
+          calendar and invites the players at the same moment — that is what
+          "Adding to your calendar and inviting players" means on screen.
+        </p>
+        <p>
+          A <strong>Send invite</strong> button now appears only in the rare
+          case where the round never reached your calendar at all, such as a
+          round saved by an older version of the app before choosing a
+          calendar was required.
+        </p>
+      </div>
+      <div class="faq-item">
         <h3>I shared a screenshot into the app — will it know what it is?</h3>
         <p>
-          It asks. Sharing a screenshot from Photos, WhatsApp or anywhere else
-          opens the app and asks what you have got, exactly as the purple button
-          does, before it reads anything. That matters most for tournaments:
-          read as an ordinary booking, a competition entry would list the
-          form's own labels as players.
+          It reads it first, then tells you what it found and asks you to
+          confirm — the same as the purple button. That matters most for
+          tournaments: read as an ordinary booking, a competition entry would
+          list the form's own labels as players. If the app gets it wrong, or
+          cannot tell, you correct it on that screen before anything is
+          saved and before anyone is invited.
         </p>
       </div>
 
